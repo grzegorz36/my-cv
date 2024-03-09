@@ -35,6 +35,33 @@ const cv: CV = {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    
+    <main>
+      <header className='cv-header'>
+        <h1>CV {cv.name} {cv.lastName}</h1>
+      </header>
+
+      <aside className='cv-personal'>
+        <h2>Personal data</h2>
+        <img className='cv-photo' src={cv.photo}></img>
+        <h3>{cv.name} {cv.lastName}</h3>
+        <p>{cv.position}</p>
+      </aside>
+
+      <section className='cv-details'>
+        <h2>Experience</h2>
+        <ul>
+          {cv.experience.map(el => 
+          <li key={el.year}>
+            <strong>{el.year}</strong> - {el.description}
+          </li>
+            )}
+        </ul>
+
+        <h2>Education</h2>
+        <ul>
+          {cv.education.map((el, index) => <li key={index}>{el}</li>)}
+        </ul>
+      </section>
+    </main>
   </React.StrictMode>,
 )
