@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import photo from './assets/photo.svg'
+import './index.scss'
 interface Experience {
   description: string;
   year: number;
@@ -35,14 +36,14 @@ const cv: CV = {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <main>
+    <main className='cv-main'>
       <header className='cv-header'>
         <h1>CV {cv.name} {cv.lastName}</h1>
       </header>
 
       <aside className='cv-personal'>
         <h2>Personal data</h2>
-        <img className='cv-photo' src={cv.photo}></img>
+        <img className='cv-photo' src={cv.photo} alt={`${cv.name} ${cv.lastName}  photo cv`}></img>
         <h3>{cv.name} {cv.lastName}</h3>
         <p>{cv.position}</p>
       </aside>

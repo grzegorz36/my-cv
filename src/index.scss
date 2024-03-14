@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul{
+    li{
+        list-style: none;
+        padding-top: 10px;
+    }
+}
+
+h1{
+    text-align: center;
+}
+
+h2, h3{
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.cv-header {
+    // background-color: rgb(206, 205, 205);
+    grid-area: header;
+    padding: 30px 0;
+}
+
+.cv-main {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "personal details";
+    grid-template-columns: 210px 1fr;
+}
+
+.cv-personal {
+    grid-area: personal;
+    background-color: #98FB98;
+    padding: 20px 20px;
+
+    .cv-photo {
+        max-width: 70%;
+        border-radius: 50%;
+    }
+}
+
+.cv-details {
+    grid-area: details;
+    background-color: #87CEEB;
+    padding: 20px 10px;
+}
